@@ -6,16 +6,12 @@ npm-debug.log*
 yarn-error.log*
 
 # Python / Anaconda
-__pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.pkl
-.ipynb_checkpoints/
-.venv/
 .env
 env/
-venv/
 anaconda3/
 
 # MongoDB
@@ -60,8 +56,6 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
-.vercel
 
 # typescript
 *.tsbuildinfo
