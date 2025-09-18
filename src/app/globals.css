@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Tajawal:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS variables (safe root block) */
+:root {
+  --color-primary: #ab4967;
+  --color-secondary: #508078;
+  --color-dark: #000000;
+}
+
+/* small base rules */
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  @apply font-body text-dark bg-white;
+}
