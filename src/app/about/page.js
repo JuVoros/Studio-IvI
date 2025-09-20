@@ -48,7 +48,7 @@ export default function PageTemplate() {
             
               <p className="text-white text-opacity-90 mb-8 leading-relaxed text-lg">
                 With a passion for creating spaces that seamlessly blend functionality with aesthetic beauty, 
-                I specialize in transforming environments into extraordinary experiences that reflect each client's unique vision.
+                I specialize in transforming environments into extraordinary experiences that reflect each client&apos;s unique vision.
               </p>
 
               {/* Bullet Points Grid */}

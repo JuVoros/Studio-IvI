@@ -72,8 +72,8 @@ export default function Blog() {
                     Coming Soon
                   </h4>
                   <p className="text-sm text-amber-800 font-serif italic mb-4">
-                    "A Collection of Thoughts, Insights,<br/>
-                    and Creative Discoveries"
+                    A Collection of Thoughts, Insights,<br/>
+                    and Creative Discoveries
                   </p>
                 </div>
 
