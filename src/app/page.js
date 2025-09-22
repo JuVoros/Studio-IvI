@@ -421,7 +421,7 @@ export default function Home() {
               className="text-sm sm:text-base md:text-lg text-white text-opacity-80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2"
               variants={itemVariants}
             >
-              Let's collaborate to create environments that inspire and elevate your daily experience.
+              Let&apos:s collaborate to create environments that inspire and elevate your daily experience.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
