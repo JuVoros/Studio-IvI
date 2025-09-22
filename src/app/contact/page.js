@@ -8,10 +8,10 @@ export default function Contact() {
     >
 
       
-      <div className="relative z-10 w-full max-w-4xl mx-auto">
+      <div className="relative z-10 w-full max-w-4xl mx-auto pt-8">
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4 drop-shadow-lg pt-10">
             Get In Touch
           </h1>
           <p className="text-lg md:text-xl text-secondary drop-shadow-md max-w-2xl mx-auto">
