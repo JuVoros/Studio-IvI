@@ -13,7 +13,7 @@ export default function PageTemplate() {
     <main 
       className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20 pt-10"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')"
+        backgroundImage: "url('/images/OfficePic1.jpeg')"
       }}
     >
       

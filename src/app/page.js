@@ -144,10 +144,11 @@ export default function Home() {
       <section 
         className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat relative overflow-hidden"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80')",
+          backgroundImage: "url('/images/OfficePic4.jpeg')",
           backgroundColor: '#0a0a0a',
         }}
       >
+
         {/* Floating Background Words - Hidden on small screens for performance */}
         <div className="hidden sm:block">
           {floatingWords.map((word, index) => (
@@ -242,7 +243,10 @@ export default function Home() {
       {/* FEATURED PROJECTS SECTION */}
       <section 
         ref={featuredRef}
-        className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black to-gray-900"
+        className="relative py-12 sm:py-16 md:py-20"
+        style={{
+          backgroundImage:"url('/images/OfficePic1.jpeg')"
+        }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -321,13 +325,8 @@ export default function Home() {
                 animate={isReviewsInView ? "visible" : "hidden"}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="flex mb-3 sm:mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-base sm:text-lg">★</span>
-                  ))}
-                </div>
                 <p className="text-white text-opacity-90 mb-3 sm:mb-4 italic text-sm sm:text-base leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div>
                   <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</p>
@@ -342,7 +341,11 @@ export default function Home() {
       {/* SERVICES SECTION */}
       <section 
         ref={servicesRef}
-        className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black to-gray-900"
+        className="relative py-12 sm:py-16 md:py-2"
+        style= {{
+          backgroundImage: "url('/image/OfficePic2')"
+        }} 
+        
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -384,12 +387,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section 
+       <section 
         ref={ctaRef}
-        className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-t from-gray-900 to-black"
+        className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
       >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        {/* Hero callback image with different positioning */}
+        <div 
+          className="absolute inset-0 bg-cover bg-bottom" // Changed from bg-center to bg-bottom for different view
+          style={{
+            backgroundImage: "url('/images/OfficePic4.jpeg')",
+          }}
+        />
+        
+        {/* Vignette effect for dramatic finish */}
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-black/40 to-black/80" />
+        
+        {/* Additional center spotlight effect */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/70" />
+        
+        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
