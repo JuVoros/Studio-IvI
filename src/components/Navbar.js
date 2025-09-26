@@ -42,7 +42,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="absolute top-20 sm:top-24 left-0 w-full px-4 py-2 z-50 bg-transparent">
+    <nav className="absolute top-20 sm:top-24 left-0 w-full px-4 py-2 z-50 bg-transparent pt-8">
       <div className="w-full max-w-7xl mx-auto">
         {/* Desktop Navigation */}
         {desktopNavigation}

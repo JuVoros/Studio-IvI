@@ -149,7 +149,7 @@ export default function Home() {
         }}
       >
 
-        {/* Floating Background Words - Hidden on small screens for performance */}
+        {/* Floating Background Words - Hidden on small screens for performance 
         <div className="hidden sm:block">
           {floatingWords.map((word, index) => (
             <motion.div
@@ -161,7 +161,7 @@ export default function Home() {
                 opacity: word.opacity,
               }}
               animate={{
-                x: mousePosition.x * (index % 2 === 0 ? 1 : -1) * 0.3, // Reduced movement
+                x: mousePosition.x * (index % 2 === 0 ? 1 : -1) * 0.3,
                 y: mousePosition.y * (index % 2 === 0 ? 1 : -1) * 0.2,
               }}
               transition={{
@@ -174,14 +174,6 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-
-        {/* Geometric Elements - Responsive sizing */}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 border border-white border-opacity-10 rotate-45 z-10"
-          style={{ y: y1 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
 
         {/* Hero Content */}
         <motion.div 
@@ -421,7 +413,7 @@ export default function Home() {
               className="text-sm sm:text-base md:text-lg text-white text-opacity-80 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2"
               variants={itemVariants}
             >
-              Let&apos:s collaborate to create environments that inspire and elevate your daily experience.
+              Let&apos;s collaborate to create environments that inspire and elevate your daily experience.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"

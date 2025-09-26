@@ -11,14 +11,14 @@ export default function PageTemplate() {
 
   return (
     <main 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20 pt-10"
+      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20"
       style={{
         backgroundImage: "url('/images/OfficePic1.jpeg')"
       }}
     >
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto pt-10">
+      <div className="relative z-10 w-full max-w-4xl mx-auto pt-8">
         
         {/* Page Title with animation */}
         <motion.div 
@@ -27,7 +27,7 @@ export default function PageTemplate() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-10 bt-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-10">
             ABOUT ME
           </h1>
           <p className="text-lg md:text-xl text-white drop-shadow-md max-w-3xl mx-auto">

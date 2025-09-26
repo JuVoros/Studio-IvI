@@ -10,7 +10,7 @@ export default function Blog() {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
       {/* Content Card */}
-      <div className="relative z-10 w-full max-w-2xl">
+      <div className="relative z-10 w-full max-w-2xl pt-10">
         <div className="bg-white/20 backdrop-blur-md rounded-2xl shadow-xl p-8 text-center border border-white/30">
           {/* Title */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">

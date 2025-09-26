@@ -1,12 +1,12 @@
 export default function PageTemplate() {
   return (
     <main 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20"
+      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20 pt-10"
       style={{
         backgroundImage: "url('/images/OfficePic4.jpeg')"
       }}
     >
-      {/* Dark overlay for better readability */}
+      {/* Dark overlay*/}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       {/* Content Container */}
