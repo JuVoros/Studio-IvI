@@ -6,8 +6,8 @@
 
 /* CSS variables (safe root block) */
 :root {
-  --color-primary: #ab4967;
-  --color-secondary: #508078;
+  --color-primary:white;
+  --color-secondary: black;
   --color-dark: #000000;
 }
 

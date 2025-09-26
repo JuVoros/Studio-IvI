@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'; //animation lib
 import { useRef } from 'react'; //ref to DOM
+import Link from 'next/link';
 
 export default function PageTemplate() {
   const imageRef = useRef(null);
@@ -47,7 +48,7 @@ export default function PageTemplate() {
             <div 
               className="w-80 h-60 bg-cover bg-center rounded-lg overflow-hidden"
               style={{
-                backgroundImage: "url('')"
+                backgroundImage: "url('/images/Portrait.jpeg')"
               }}
             >
               <div className="w-full h-full bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -139,20 +140,25 @@ export default function PageTemplate() {
                 animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >
+                <Link href="/projects">
                 <motion.button 
+
                   className="px-8 py-3 bg-white bg-opacity-20 text-white font-medium rounded-lg border border-white border-opacity-30 transition-all duration-200"
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  View Portfolio
+                  View Projects
                 </motion.button>
+                </Link>
+                <Link href="/contact">
                 <motion.button 
                   className="px-8 py-3 bg-transparent text-white font-medium rounded-lg border border-white border-opacity-30 transition-all duration-200"
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                   whileTap={{ scale: 0.95 }}
-                >
+                  >
                   Get In Touch
                 </motion.button>
+                  </Link>
               </motion.div>
             </div>
           </div>

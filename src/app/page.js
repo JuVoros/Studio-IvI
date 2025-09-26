@@ -25,21 +25,6 @@ export default function Home() {
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const heroScale = useTransform(scrollY, [0, 400], [1, 0.8]);
 
-  // Mouse tracking for floating words (disabled on mobile for performance)
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (window.innerWidth > 768) { // Only track on desktop
-        setMousePosition({
-          x: (e.clientX / window.innerWidth - 0.5) * 20,
-          y: (e.clientY / window.innerHeight - 0.5) * 20,
-        });
-      }
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -77,13 +62,6 @@ export default function Home() {
     }
   };
 
-  // Floating words data - responsive sizes
-  const floatingWords = [
-    { text: "DESIGN", x: 10, y: 20, size: "text-2xl sm:text-3xl md:text-4xl", opacity: 0.08 },
-    { text: "CREATIVE", x: 80, y: 15, size: "text-xl sm:text-2xl md:text-3xl", opacity: 0.06 },
-    { text: "STUDIO", x: 15, y: 70, size: "text-3xl sm:text-4xl md:text-5xl", opacity: 0.1 },
-    { text: "ARCHITECTURE", x: 70, y: 80, size: "text-lg sm:text-xl md:text-2xl", opacity: 0.07 }
-  ];
 
   // Sample data
   const featuredProjects = [
@@ -104,19 +82,16 @@ export default function Home() {
       name: "Sarah Johnson",
       role: "Homeowner",
       text: "The attention to detail and creative vision exceeded all our expectations. Our space has been completely transformed.",
-      rating: 5
     },
     {
       name: "Michael Chen",
       role: "Business Owner",
       text: "Professional, innovative, and incredibly talented. The office redesign has improved our team's productivity significantly.",
-      rating: 5
     },
     {
       name: "Emily Rodriguez",
       role: "Property Developer",
       text: "Working with Studio IvI was seamless. They delivered exceptional results on time and within budget.",
-      rating: 5
     }
   ];
 
@@ -148,32 +123,6 @@ export default function Home() {
           backgroundColor: '#0a0a0a',
         }}
       >
-
-        {/* Floating Background Words - Hidden on small screens for performance 
-        <div className="hidden sm:block">
-          {floatingWords.map((word, index) => (
-            <motion.div
-              key={index}
-              className={`absolute ${word.size} font-bold text-white select-none pointer-events-none z-10`}
-              style={{
-                left: `${word.x}%`,
-                top: `${word.y}%`,
-                opacity: word.opacity,
-              }}
-              animate={{
-                x: mousePosition.x * (index % 2 === 0 ? 1 : -1) * 0.3,
-                y: mousePosition.y * (index % 2 === 0 ? 1 : -1) * 0.2,
-              }}
-              transition={{
-                type: "spring",
-                damping: 30,
-                stiffness: 100,
-              }}
-            >
-              {word.text}
-            </motion.div>
-          ))}
-        </div>
 
         {/* Hero Content */}
         <motion.div 

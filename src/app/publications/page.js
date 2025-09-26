@@ -23,11 +23,11 @@ export default function Publications() {
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-4xl mx-auto text-center pt-6">
+      <div className="relative z-10 w-full max-w-4xl mx-auto text-center pt-6 ">
         
         {/* Page Title */}
         <motion.div
-          className="mb-12"
+          className="mb-12 "
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

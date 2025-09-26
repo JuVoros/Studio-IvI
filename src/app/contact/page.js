@@ -29,10 +29,10 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-4 drop-shadow-lg pt-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-10">
             Get In Touch
           </h1>
-          <p className="text-lg md:text-xl text-secondary drop-shadow-md max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-black drop-shadow-md max-w-2xl mx-auto">
             Ready to start your next project? Let&apos;s connect and discuss how we can work together.
           </p>
         </motion.div>
@@ -51,7 +51,7 @@ export default function Contact() {
               title: "Email",
               desc: "Send me a message anytime",
               link: "mailto:your.email@example.com",
-              linkLabel: "your.email@example.com"
+              linkLabel: "Teo@TheStudioIvi.com"
             },
             {
               icon: "📱",
@@ -70,7 +70,7 @@ export default function Contact() {
           ].map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 shadow-xl hover:bg-opacity-15 transition-all duration-300 text-center"
+              className="bg-secondary bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 shadow-xl hover:bg-opacity-15 transition-all duration-300 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
@@ -78,13 +78,13 @@ export default function Contact() {
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">{item.icon}</span>
               </div>
-              <h3 className="text-xl font-bold text-primary mb-3">{item.title}</h3>
-              <p className="text-secondary mb-4 text-sm">{item.desc}</p>
+              <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+              <p className="text-black mb-4 text-sm">{item.desc}</p>
               <a 
                 href={item.link}
                 target={item.title === "LinkedIn" ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-primary bg-opacity-20 text-primary font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200 text-sm"
+                className="inline-block px-6 py-3 bg-primary bg-opacity-20 text-white font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200 text-sm"
               >
                 {item.linkLabel}
               </a>

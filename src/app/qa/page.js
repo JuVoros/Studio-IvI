@@ -5,12 +5,12 @@ const FAQ_DATA = [
   {
     id: 1,
     question: "What services do you offer?",
-    answer: ""
+    answer: "All Services"
   },
   {
     id: 2,
     question: "How long does a typical project take?",
-    answer: ""
+    answer: "1 Hour"
   },
   {
     id: 3,
@@ -51,16 +51,16 @@ export default function QA() {
       <div className="relative z-10 w-full max-w-4xl mx-auto pt-20">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl pt-10 bt-5 md:text-6xl font-bold text-primary mb-4 drop-shadow-lg">
+          <h1 className="text-4xl pt-10 bt-5 md:text-6xl font-bold text-black mb-4 drop-shadow-lg">
             Q&A
           </h1>
-          <p className="text-lg md:text-xl text-secondary drop-shadow-md max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white drop-shadow-md max-w-2xl mx-auto">
             Frequently asked questions about my services, process, and how we can work together.
           </p>
         </div>
 
         {/* FAQ Card */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 md:p-8 border border-white border-opacity-20 shadow-xl">
+        <div className="bg-secondary bg-opacity-80 backdrop-blur-md rounded-xl p-6 md:p-8 border border-white border-opacity-20 shadow-xl">
           <div className="space-y-4">
             {FAQ_DATA.map((faq) => (
               <div 
@@ -72,12 +72,12 @@ export default function QA() {
                   onClick={() => toggleQuestion(faq.id)}
                   className="w-full text-left py-4 flex items-center justify-between hover:bg-white hover:bg-opacity-5 transition-all duration-200 rounded-lg px-2"
                 >
-                  <h3 className="text-lg md:text-xl font-semibold text-primary pr-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-white pr-4">
                     {faq.question}
                   </h3>
                   
                   {/* Expand/Collapse Icon */}
-                  <span className="text-primary text-xl font-bold flex-shrink-0">
+                  <span className="text-black text-xl font-bold flex-shrink-0">
                     {openQuestion === faq.id ? '−' : '+'}
                   </span>
                 </button>
@@ -86,7 +86,7 @@ export default function QA() {
                 {openQuestion === faq.id && (
                   <div className="pb-4 px-2">
                     <div className="pt-2 border-t border-white border-opacity-10">
-                      <p className="text-secondary leading-relaxed">
+                      <p className="text-white leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -98,12 +98,12 @@ export default function QA() {
 
           {/* Contact CTA */}
           <div className="mt-8 pt-6 border-t border-white border-opacity-20 text-center">
-            <p className="text-secondary mb-4">
+            <p className="text-black mb-4">
               Have a question that isn&apos;t answered here?
             </p>
             <a 
               href="/contact"
-              className="inline-block px-8 py-3 bg-primary bg-opacity-20 text-primary font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200"
+              className="inline-block px-8 py-3 bg-primary bg-opacity-20 text-white font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200"
             >
               Get In Touch
             </a>
