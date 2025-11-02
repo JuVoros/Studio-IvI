@@ -181,7 +181,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* FEATURED PROJECTS SECTION */}
+      {/* FEATURED PROJECTS SECTION
       <section 
         ref={featuredRef}
         className="relative py-12 sm:py-16 md:py-20"
@@ -234,104 +234,99 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section>  */}
 
-      {/* TESTIMONIALS SECTION */}
-      <section 
-        ref={reviewsRef}
-        className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-900 to-black"
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isReviewsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Client Testimonials
-            </h2>
-            <p className="text-white text-opacity-80 max-w-2xl mx-auto text-sm sm:text-base px-2">
-              What our clients say about working with Studio IvI
+    {/* SERVICES SECTION above */}
+<section 
+  ref={servicesRef}
+  className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-br from-[#0F0F10] via-[#1A1A1C] to-[#0E0E0F] overflow-hidden"
+>
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+
+    <motion.div
+      className="text-center mb-12 sm:mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+        My Services
+      </h2>
+      <p className="text-white text-opacity-80 max-w-2xl mx-auto text-sm sm:text-base">
+        Comprehensive interior architecture solutions tailored to your needs
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {services.map((service, index) => (
+        <motion.div
+          key={index}
+          className="text-center"
+          variants={cardVariants}
+          initial="hidden"
+          animate={isServicesInView ? "visible" : "hidden"}
+          transition={{ delay: index * 0.15 }}
+        >
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-white/20">
+            <div className="text-4xl sm:text-5xl md:text-6xl mb-4">{service.icon}</div>
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-3">
+              {service.title}
+            </h3>
+            <p className="text-white/80 text-sm sm:text-base">
+              {service.description}
             </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white border-opacity-20 hover:bg-opacity-15 transition-all duration-300"
-                variants={cardVariants}
-                initial="hidden"
-                animate={isReviewsInView ? "visible" : "hidden"}
-                transition={{ delay: index * 0.1 }}
-              >
-                <p className="text-white text-opacity-90 mb-3 sm:mb-4 italic text-sm sm:text-base leading-relaxed">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <div>
-                  <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</p>
-                  <p className="text-white text-opacity-70 text-xs sm:text-sm">{testimonial.role}</p>
-                </div>
-              </motion.div>
-            ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
-      {/* SERVICES SECTION */}
-      <section 
-        ref={servicesRef}
-        className="relative py-12 sm:py-16 md:py-2"
-        style= {{
-          backgroundImage: "url('/image/OfficePic2')"
-        }} 
-        
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <motion.div
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Our Services
-            </h2>
-            <p className="text-white text-opacity-80 max-w-2xl mx-auto text-sm sm:text-base px-2">
-              Comprehensive interior architecture solutions tailored to your needs
-            </p>
-          </motion.div>
+{/* TESTIMONIALS SECTION beelow 
+<section 
+  ref={reviewsRef}
+  className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-b from-black to-gray-900"
+>
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <motion.div
+      className="text-center mb-12 sm:mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isReviewsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+        Client Testimonials
+      </h2>
+      <p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base">
+        What our clients say about working with Studio IvI
+      </p>
+    </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="text-center group"
-                variants={cardVariants}
-                initial="hidden"
-                animate={isServicesInView ? "visible" : "hidden"}
-                transition={{ delay: index * 0.15 }}
-              >
-                <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-white border-opacity-20 hover:bg-opacity-15 transition-all duration-300 group-hover:scale-102 sm:group-hover:scale-105">
-                  <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">{service.icon}</div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-                    {service.title}
-                  </h3>
-                  <p className="text-white text-opacity-80 leading-relaxed text-sm sm:text-base">
-                    {service.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((testimonial, index) => (
+        <motion.div
+          key={index}
+          className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20"
+          variants={cardVariants}
+          initial="hidden"
+          animate={isReviewsInView ? "visible" : "hidden"}
+          transition={{ delay: index * 0.1 }}
+        >
+          <p className="text-white mb-4 italic text-sm sm:text-base">&ldquo;{testimonial.text}&rdquo;</p>
+          <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</p>
+          <p className="text-white/70 text-xs sm:text-sm">{testimonial.role}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+*/}
 
        <section 
         ref={ctaRef}
         className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
       >
+
         {/* Hero callback image with different positioning */}
         <div 
           className="absolute inset-0 bg-cover bg-bottom" // Changed from bg-center to bg-bottom for different view

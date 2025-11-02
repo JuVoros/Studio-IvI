@@ -57,8 +57,8 @@ export default function Contact() {
               icon: "📱",
               title: "Phone",
               desc: "Call or text me directly",
-              link: "tel:+1234567890",
-              linkLabel: "+1 (xxx) xxx-xxxx"
+              link: "tel:+12066963932",
+              linkLabel: "+1 (206) 696-3932"
             },
             {
               icon: "💼",
@@ -70,7 +70,7 @@ export default function Contact() {
           ].map((item, index) => (
             <motion.div 
               key={index}
-              className="bg-secondary bg-opacity-10 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 shadow-xl hover:bg-opacity-15 transition-all duration-300 text-center"
+              className="bg-black bg-opacity-20 backdrop-blur-md rounded-xl p-6 border border-white border-opacity-20 shadow-xl hover:bg-opacity-15 transition-all duration-300 text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={isCardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
@@ -110,7 +110,7 @@ export default function Contact() {
           </motion.h3>
           
           <motion.p 
-            className="text-secondary mb-6 leading-relaxed"
+            className="text-white mb-6 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInfoInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 1.0 }}
@@ -128,13 +128,13 @@ export default function Contact() {
           >
             <a 
               href="mailto:your.email@example.com"
-              className="px-8 py-3 bg-primary bg-opacity-20 text-primary font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200"
+              className="px-8 py-3 bg-primary bg-opacity-20 text-white font-medium rounded-lg border border-primary border-opacity-30 hover:bg-opacity-30 transition-all duration-200"
             >
               Send Message
             </a>
             <a 
               href="/projects"
-              className="px-8 py-3 bg-transparent text-secondary font-medium rounded-lg border border-secondary border-opacity-50 hover:bg-secondary hover:bg-opacity-10 transition-all duration-200"
+              className="px-8 py-3 bg-transparent text-white font-medium rounded-lg border border-secondary border-opacity-50 hover:bg-secondary hover:bg-opacity-10 transition-all duration-200"
             >
               View My Work
             </a>

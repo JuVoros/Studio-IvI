@@ -26,14 +26,15 @@ export default function PageTemplate() {
           className="text-center mb-12 pt-10 bt-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8 }}   
         >
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-10">
             ABOUT ME
           </h1>
-          <p className="text-lg md:text-xl text-white drop-shadow-md max-w-3xl mx-auto">
+          {/*<p className="text-lg md:text-xl text-white drop-shadow-md max-w-3xl mx-auto">
             Crafting spaces that inspire and transform through innovative design and architectural excellence.
           </p>
+          */}
         </motion.div>
 
         {/* Centered Image Rectangle with reveal animation */}
@@ -84,11 +85,10 @@ export default function PageTemplate() {
                 animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                With a passion for creating spaces that seamlessly blend functionality with aesthetic beauty, 
-                I specialize in transforming environments into extraordinary experiences that reflect each client&apos;s unique vision.
+                Hi, I’m Teo — a Seattle-based interior designer who loves turning ordinary rooms into spaces that feel effortlessly pulled together. My interest in design started at a very young age. I went to an alternative school where hands-on learning and creating was encouraged. In elementary school, I spent many afternoons felting soap bars, knitting socks, sewing onesies, and whittling gnomes. On the weekends, my mom and I scanned neighborhoods for open houses. I have always known that my life was meant to be filled with beautiful spaces and curated, lovingly created things. I love helping clients make the most of what they already have while adding thoughtful, personal touches. My process is collaborative, with an emphasis on understanding how you use your space. Whether it&apos;s an office or a home, I strive to create spaces that feel good to walk into every day. 
               </motion.p>
 
-              {/* Bullet Points Grid with staggered animation */}
+              {/* Bullet Points Grid with staggered animation 
               <motion.div 
                 className="grid md:grid-cols-2 gap-6 mb-8"
                 initial={{ opacity: 0 }}
@@ -132,7 +132,7 @@ export default function PageTemplate() {
                   </motion.div>
                 ))}
               </motion.div>
-              
+              */}
               {/* Card Buttons with animation */}
               <motion.div 
                 className="flex flex-col sm:flex-row gap-4 justify-center"

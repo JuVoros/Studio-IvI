@@ -5,31 +5,31 @@ const FAQ_DATA = [
   {
     id: 1,
     question: "What services do you offer?",
-    answer: "All Services"
+    answer: "I provide full-scope interior design services for residential and commercial spaces, including layout strategy, furniture and finishes selection, custom sourcing, art and accessories curation, and installation coordination. I also create floor plans, mood boards, and presentation materials to help clients visualize their spaces clearly. Whether refreshing one room or developing an entire office, I bring cohesion, functionality, and personality to every project."
   },
   {
     id: 2,
     question: "How long does a typical project take?",
-    answer: "1 Hour"
+    answer: "Project timelines vary based on scope, number of spaces, product lead times, and any construction involved. A single-room refresh might take a couple of weeks, while multi-room commercial projects often span several months. During our consultation, I’ll create a tailored timeline so you always know what to expect next.                                                                                                                                                       "
   },
   {
     id: 3,
     question: "What technologies do you work with?",
-  answer: "ROCK AND STONE"
+  answer: "I use industry-standard design software such as AutoCAD and Revit, along with digital mood boards to streamline communication and approvals. You'll have visuals and organized documentation every step of the way.                                                                                                                                                                                                                                                                             "
   },
   {
     id: 4,
     question: "Do you offer maintenance and support?",
-    answer: "zzzzzzzzzzzzzzzzszszszszszszszszsz"
+    answer: "Yes. I remain a partner even after installation day. I can assist with product care guidance, space updates, and ongoing sourcing needs as your environment evolves. For commercial spaces, I can provide phased planning and support as teams grow or functions shift.                                                                                                                                                                                                                            "
   },
   {
     id: 5,
     question: "What's your design process like?",
-    answer: "tftfyfyfyfygygygjgjygjjg"
+    answer: "My process is collaborative and grounded in listening. We start with a discovery meeting to define your needs, style, and how you use the space. Then I create concept boards, layouts, and selections that align with your goals. Once the design is approved, I manage sourcing, orders, and installation coordination. I blend functionality with refined aesthetic details so the final result feels effortless, personalized, and beautifully cohesive."
   },
   {
     id: 6,
-    answer: "hiuhoiuhoijijojojoijpj"
+    answer: ""
   }
 ];
 

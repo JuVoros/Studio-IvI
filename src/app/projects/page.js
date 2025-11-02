@@ -10,7 +10,7 @@ export default function PageTemplate() {
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       {/* Content Container */}
-      <div className="absolute pt-20 relative z-10 w-full max-w-6xl mx-auto">
+      <div className="absolute pt-20 z-10 w-full max-w-6xl mx-auto">
         {/* Page Title */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
@@ -29,23 +29,24 @@ export default function PageTemplate() {
             <div className="text-center md:text-left">
               {/* Card Icon/Image Placeholder */}
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4">
-                <span className="text-2xl text-white">🚀</span>
+                <span className="text-2xl text-white">W.I.P</span>
               </div>
               
               {/* Card Title */}
               <h3 className="text-2xl font-bold text-white mb-4">
-                Card Title One
+                Project In Progress
               </h3>
               
               {/* Card Content */}
               <p className="text-white text-opacity-90 mb-6 leading-relaxed">
-                This is where you can add your main content for the first card. 
+               Im currently working on a project, Pictures to come!
               </p>
               
-              {/* Card Button */}
+              {/* Card Button
               <button className="w-full md:w-auto px-6 py-3 bg-white bg-opacity-20 text-white font-medium rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-200">
                 Learn More
               </button>
+              */}
             </div>
           </div>
 
@@ -54,23 +55,24 @@ export default function PageTemplate() {
             <div className="text-center md:text-left">
               {/* Card Icon/Image Placeholder */}
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-4">
-                <span className="text-2xl text-white">⭐</span>
+                <span className="text-2xl text-white">W.I.P</span>
               </div>
               
               {/* Card Title */}
               <h3 className="text-2xl font-bold text-white mb-4">
-                Card Title Two
+                Project In Progress
               </h3>
               
               {/* Card Content */}
               <p className="text-white text-opacity-90 mb-6 leading-relaxed">
-                This is the content area for your second card.
+                   Im currently working on a project, Pictures to come!
               </p>
               
-              {/* Card Button */}
+              {/* Card Button 
               <button className="w-full md:w-auto px-6 py-3 bg-white bg-opacity-20 text-white font-medium rounded-lg border border-white border-opacity-30 hover:bg-opacity-30 transition-all duration-200">
                 Get Started
               </button>
+              */}
             </div>
           </div>
 

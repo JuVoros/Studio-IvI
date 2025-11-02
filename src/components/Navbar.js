@@ -8,7 +8,7 @@ const NAVIGATION_LINKS = [
   { label: "PROJECTS", href: "/projects" },
   { label: "PUBLICATIONS", href: "/publications" },
   { label: "Q&A", href: "/qa" },
-  { label: "BLOG", href: "/blog" },
+ // { label: "BLOG", href: "/blog" },
   { label: "CONTACT", href: "/contact" },
 ];
 

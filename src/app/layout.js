@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <Title />
+        <link rel="icon" type="image/x-icon" href="/images/Favicon Original.ico"></link>    {/*This is where the icon for the tab is set */}
         <Navbar />
           <div className="flex-1">{children}</div>
         <Footer />
