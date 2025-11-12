@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion'; //animation lib
 import { useRef } from 'react'; //ref to DOM
 import Link from 'next/link';
+import Image from "next/image";
 
 export default function PageTemplate() {
   const imageRef = useRef(null);
@@ -11,12 +12,16 @@ export default function PageTemplate() {
   const isContentInView = useInView(contentRef, { once: true, margin: "-50px" });
 
   return (
-    <main 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20"
-      style={{
-        backgroundImage: "url('/images/OfficePic1.jpeg')"
-      }}
-    >
+      <main className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
+      
+      <div className="absolute inset-0 -z-10">
+        <Image 
+          src="/images/OfficePic1.jpeg"
+          alt="Background"
+          fill
+          priority              // <-- forces instant load
+        />
+      </div>
       
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-4xl mx-auto pt-8">
@@ -38,21 +43,24 @@ export default function PageTemplate() {
         </motion.div>
 
         {/* Centered Image Rectangle with reveal animation */}
-        <motion.div 
+         <motion.div 
           ref={imageRef}
           className="flex justify-center mb-8"
           initial={{ opacity: 0, scale: 0.8, y: 50 }}
-          animate={isImageInView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 50 }}
+          animate={isImageInView ? { opacity: 1, scale: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl p-4 border border-white border-opacity-20 shadow-xl hover:bg-opacity-15 transition-all duration-300">
-            <div 
-              className="w-80 h-60 bg-cover bg-center rounded-lg overflow-hidden"
-              style={{
-                backgroundImage: "url('/images/Portrait.jpeg')"
-              }}
-            >
-              <div className="w-full h-full bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div className="w-80 h-60 relative overflow-hidden rounded-lg">
+              <Image
+                src="/images/Portrait.jpeg"
+                alt="Portrait"
+                fill
+                sizes="(max-width: 768px) 80vw, 400px"
+                priority                   
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
           </div>
         </motion.div>

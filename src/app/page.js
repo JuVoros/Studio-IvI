@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link"
+import Image from "next/image"
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 
@@ -116,127 +117,121 @@ export default function Home() {
   return (
     <div className="relative">
       {/* HERO SECTION */}
-      <section 
-        className="flex min-h-screen items-center justify-center bg-cover bg-center bg-no-repeat relative overflow-hidden"
-        style={{
-          backgroundImage: "url('/images/OfficePic4.jpeg')",
-          backgroundColor: '#0a0a0a',
-        }}
+     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0a0a0a]">
+  {/* Background */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/OfficePic4.jpeg"
+      alt="Studio background"
+      fill
+      priority
+      sizes="100vw"
+      className="object-cover"
+    />
+  </div>
+
+  {/*  HERO CONTENT WRAPPER (keeps logo + text stacked together) */}
+  <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+
+    {/*  LOGO (NOT animated, always visible) */}
+    <div className="w-[450px] sm:w-[600px] md:w-[750px] lg:w-[900px] mb-6">
+      <Image
+        src="/images/Transparent Logo.png"
+        alt="Studio IvI Logo"
+        width={3000}
+        height={3000}
+        priority
+        className="w-full h-auto object-contain drop-shadow-2xl invert brightness-200"
+
+      />
+    </div>
+
+    {/*  TEXT + CTA (still animated) */}
+    <motion.div
+      style={{ opacity: heroOpacity, scale: heroScale }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.p
+        className="text-base sm:text-lg md:text-xl text-white mb-6 drop-shadow-md max-w-2xl mx-auto"
+        variants={itemVariants}
       >
+        Transforming spaces through innovative interior architecture and design
+      </motion.p>
 
-        {/* Hero Content */}
-        <motion.div 
-          className="text-center relative z-20 px-4 max-w-4xl mx-auto"
-          style={{ opacity: heroOpacity, scale: heroScale }}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+      <Link href="/projects">
+        <motion.button
+          className="px-6 py-3 sm:px-8 sm:py-4 bg-white bg-opacity-20 backdrop-blur-sm text-white font-semibold rounded-lg shadow-lg border border-white border-opacity-30"
+          variants={itemVariants}
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.3)" }}
+          whileTap={{ scale: 0.98 }}
         >
-          <motion.h1 
-            className="text-2xl sm:text-2 md:text-6xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-lg leading-tight"
-            variants={itemVariants}
-          >
-            Studio IvI
-          </motion.h1>
-          
-          <motion.p 
-            className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 drop-shadow-md max-w-2xl mx-auto leading-relaxed px-2"
-            variants={itemVariants}
-          >
-            Transforming spaces through innovative interior architecture and design
-          </motion.p>
-          
-          <Link href="/projects">
-            <motion.button 
-              className="px-6 py-3 sm:px-8 sm:py-4 bg-white bg-opacity-20 backdrop-blur-sm text-white font-semibold text-sm sm:text-base rounded-lg shadow-lg border border-white border-opacity-30 relative overflow-hidden group w-full sm:w-auto"
-              variants={itemVariants}
-              whileHover={{ 
-                scale: 1.02, // Reduced scale for mobile
-                backgroundColor: "rgba(255, 255, 255, 0.3)"
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span className="relative z-10">Explore My Work</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0"
-                whileHover={{ 
-                  opacity: 0.1,
-                  x: [-100, 100],
-                }}
-                transition={{ duration: 0.6 }}
-              />
-            </motion.button>
-          </Link>
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white border-opacity-50 rounded-full flex justify-center">
-            <div className="w-1 h-2 bg-white bg-opacity-70 rounded-full mt-2"></div>
-          </div>
-        </motion.div>
-      </section>
+          Explore My Work
+        </motion.button>
+      </Link>
+    </motion.div>
+  </div>
+</section>
+<div>
 
       {/* FEATURED PROJECTS SECTION
       <section 
-        ref={featuredRef}
-        className="relative py-12 sm:py-16 md:py-20"
-        style={{
-          backgroundImage:"url('/images/OfficePic1.jpeg')"
+      ref={featuredRef}
+      className="relative py-12 sm:py-16 md:py-20"
+      style={{
+        backgroundImage:"url('/images/OfficePic1.jpeg')"
         }}
-      >
+        >
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <motion.div
+        className="text-center mb-8 sm:mb-12 md:mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isFeaturedInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6 }}
+        >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+        Featured Projects
+        </h2>
+        <p className="text-white text-opacity-80 max-w-2xl mx-auto text-sm sm:text-base px-2">
+        Discover some of our most impactful interior design transformations
+        </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        {featuredProjects.map((project, index) => (
           <motion.div
-            className="text-center mb-8 sm:mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isFeaturedInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
+          key={index}
+          className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl overflow-hidden border border-white border-opacity-20 group hover:bg-opacity-15 transition-all duration-300"
+          variants={cardVariants}
+          initial="hidden"
+          animate={isFeaturedInView ? "visible" : "hidden"}
+          transition={{ delay: index * 0.15 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
-              Featured Projects
-            </h2>
-            <p className="text-white text-opacity-80 max-w-2xl mx-auto text-sm sm:text-base px-2">
-              Discover some of our most impactful interior design transformations
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="bg-white bg-opacity-10 backdrop-blur-md rounded-xl overflow-hidden border border-white border-opacity-20 group hover:bg-opacity-15 transition-all duration-300"
-                variants={cardVariants}
-                initial="hidden"
-                animate={isFeaturedInView ? "visible" : "hidden"}
-                transition={{ delay: index * 0.15 }}
-              >
-                <div className="aspect-[4/3] relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 leading-tight">
-                    {project.title}
-                  </h3>
-                  <p className="text-white text-opacity-80 leading-relaxed text-sm sm:text-base">
-                    {project.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="aspect-[4/3] relative overflow-hidden">
+          <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 sm:group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </div>
-        </div>
-      </section>  */}
+          <div className="p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 leading-tight">
+          {project.title}
+          </h3>
+          <p className="text-white text-opacity-80 leading-relaxed text-sm sm:text-base">
+          {project.description}
+          </p>
+          </div>
+          </motion.div>
+          ))}
+          </div>
+          </div>
+          </section>  */}
 
     {/* SERVICES SECTION above */}
+          </div>
 <section 
   ref={servicesRef}
   className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-br from-[#0F0F10] via-[#1A1A1C] to-[#0E0E0F] overflow-hidden"
@@ -282,45 +277,48 @@ export default function Home() {
   </div>
 </section>
 
+<div>
+
 {/* TESTIMONIALS SECTION beelow 
 <section 
-  ref={reviewsRef}
-  className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-b from-black to-gray-900"
+ref={reviewsRef}
+className="relative py-16 sm:py-20 md:py-28 bg-gradient-to-b from-black to-gray-900"
 >
-  <div className="max-w-6xl mx-auto px-4 sm:px-6">
-    <motion.div
-      className="text-center mb-12 sm:mb-16"
-      initial={{ opacity: 0, y: 30 }}
-      animate={isReviewsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6 }}
-    >
-      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-        Client Testimonials
-      </h2>
-      <p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base">
-        What our clients say about working with Studio IvI
-      </p>
-    </motion.div>
+<div className="max-w-6xl mx-auto px-4 sm:px-6">
+<motion.div
+className="text-center mb-12 sm:mb-16"
+initial={{ opacity: 0, y: 30 }}
+animate={isReviewsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+transition={{ duration: 0.6 }}
+>
+<h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+Client Testimonials
+</h2>
+<p className="text-white/80 max-w-2xl mx-auto text-sm sm:text-base">
+What our clients say about working with Studio IvI
+</p>
+</motion.div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {testimonials.map((testimonial, index) => (
-        <motion.div
-          key={index}
-          className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20"
-          variants={cardVariants}
-          initial="hidden"
-          animate={isReviewsInView ? "visible" : "hidden"}
-          transition={{ delay: index * 0.1 }}
-        >
-          <p className="text-white mb-4 italic text-sm sm:text-base">&ldquo;{testimonial.text}&rdquo;</p>
-          <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</p>
-          <p className="text-white/70 text-xs sm:text-sm">{testimonial.role}</p>
-        </motion.div>
-      ))}
-    </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+{testimonials.map((testimonial, index) => (
+  <motion.div
+  key={index}
+  className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20"
+  variants={cardVariants}
+  initial="hidden"
+  animate={isReviewsInView ? "visible" : "hidden"}
+  transition={{ delay: index * 0.1 }}
+  >
+  <p className="text-white mb-4 italic text-sm sm:text-base">&ldquo;{testimonial.text}&rdquo;</p>
+  <p className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</p>
+  <p className="text-white/70 text-xs sm:text-sm">{testimonial.role}</p>
+  </motion.div>
+  ))}
   </div>
-</section>
-*/}
+  </div>
+  </section>
+  */}
+  </div>
 
        <section 
         ref={ctaRef}

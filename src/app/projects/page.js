@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 export default function PageTemplate() {
   return (
-<main 
-  className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 pb-20 pt-24 md:pt-10"
-  style={{
-    backgroundImage: "url('/images/OfficePic4.jpeg')"
-  }}
->
+<main className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 pb-20 pt-24 md:pt-10" >
+  <Image
+    src="/images/OfficePic4.jpeg"
+    alt="Background"
+    fill
+    priority
+    />
+    
       {/* Dark overlay*/}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
@@ -39,7 +43,7 @@ export default function PageTemplate() {
               
               {/* Card Content */}
               <p className="text-white text-opacity-90 mb-6 leading-relaxed">
-               Im currently working on a project, Pictures to come!
+               Im currently working on a project. Pictures to come!
               </p>
               
               {/* Card Button
@@ -65,7 +69,7 @@ export default function PageTemplate() {
               
               {/* Card Content */}
               <p className="text-white text-opacity-90 mb-6 leading-relaxed">
-                   Im currently working on a project, Pictures to come!
+                   Im currently working on a project. Pictures to come!
               </p>
               
               {/* Card Button 

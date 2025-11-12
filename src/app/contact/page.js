@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from "next/image";
 
 export default function Contact() {
   const cardsRef = useRef(null);
@@ -10,12 +11,13 @@ export default function Contact() {
   const isInfoInView = useInView(infoRef, { once: true, margin: "-50px" });
 
   return (
-    <main 
-      className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20"
-      style={{
-      backgroundImage: "url('/images/OfficePic3.jpeg')"
-      }}
-    >
+    <main className="min-h-screen bg-cover bg-center bg-no-repeat relative flex items-center justify-center px-4 py-20" >
+      <Image
+      src="/images/OfficePic3.jpeg"
+      alt="Background"
+      fill
+      priority
+    />
 
    {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-10"></div>
