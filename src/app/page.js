@@ -130,20 +130,18 @@ export default function Home() {
     />
   </div>
 
-  {/*  HERO CONTENT WRAPPER (keeps logo + text stacked together) */}
-  <div className="relative z-20 flex flex-col items-center text-center px-4 max-w-4xl mx-auto">
+ {/*  HERO CONTENT WRAPPER (keeps logo + text stacked together) */}
+  <div className="relative z-20 flex flex-col items-center text-center px-4 w-full max-w-4xl mx-auto">
 
     {/*  LOGO (NOT animated, always visible) */}
-    <div className="w-[450px] sm:w-[600px] md:w-[750px] lg:w-[900px] mb-6">
-      <Image
-        src="/images/Transparent Logo.png"
-        alt="Studio IvI Logo"
-        width={3000}
-        height={3000}
-        priority
-        className="w-full h-auto object-contain drop-shadow-2xl invert brightness-200"
-
-      />
+    <div 
+      className="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 mb-4 sm:mb-6 bg-contain bg-center bg-no-repeat drop-shadow-2xl"
+      style={{
+        backgroundImage: "url('/images/TransparentLogo.png')",
+        filter: "invert(1) brightness(2)"
+      }}
+    />
+    <div>
     </div>
 
     {/*  TEXT + CTA (still animated) */}
@@ -370,7 +368,7 @@ What our clients say about working with Studio IvI
                   Start Your Project
                 </motion.button>
               </Link>
-              <Link href="/portfolio">
+              <Link href="/projects">
                 <motion.button 
                   className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-transparent text-white font-semibold text-sm sm:text-base rounded-lg border border-white border-opacity-50 hover:bg-white hover:bg-opacity-10"
                   whileHover={{ scale: 1.02 }}

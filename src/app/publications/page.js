@@ -32,7 +32,7 @@ export default function Publications() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg pt-20">
             Featured In
           </h1>
           <p className="text-lg md:text-xl text-white text-opacity-90 drop-shadow-md max-w-2xl mx-auto">
